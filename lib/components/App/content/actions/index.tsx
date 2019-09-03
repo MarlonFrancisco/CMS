@@ -21,14 +21,12 @@ export default function({ uploadImage, cancel }) {
     const save = async () => {
         initLoading();
         try {
-            const body = Object.assign(
-                {
-                    publish: new Date(),
-                    idProject: process.env.PROJECTID,
-                },
+            const body = {
+                publish: new Date(),
+                idProject: process.env.PROJECTID,
                 content,
-            );
-            const res = await api.post("/content", body);
+            };
+            await api.post("/content", body);
 
             endLoading();
             history.push("/app");
