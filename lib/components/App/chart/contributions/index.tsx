@@ -19,7 +19,6 @@ export default function({ data }) {
                 series.length && !filterDate.length
                     ? series[series.length - 1].data.length - 1
                     : filterDate.sort()[filterDate.length - 1];
-            console.log(countTest);
             for (let c = 0; c <= countTest; c++) {
                 labelsDate[c] = !filterDate.length
                     ? 0

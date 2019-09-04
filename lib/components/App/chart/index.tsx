@@ -38,7 +38,7 @@ export default function() {
                 <Contributions data={project}/>
                 <Grid item xs={12}>
                     <Paper>
-                        <Porcentage />
+                        <Porcentage data={project}/>
                     </Paper>
                 </Grid>
                 <Loading active={loading} />

@@ -22,7 +22,7 @@ export default function({ user }) {
 
     const render = () => {
         if (contributions.length) {
-            return contributions.map((content: IContents, index: number) => (
+            return contributions.reverse().map((content: IContents, index: number) => (
                 <ListItem button key={index}>
                     <ListItemAvatar>
                         <Avatar
