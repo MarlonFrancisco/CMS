@@ -12,12 +12,17 @@ interface IProps {
 export default function(props: IProps) {
     const menu = Boolean(props.menuState);
 
-    function endSession() {
+    const myAccount = () => {
+        props.history.push("/app/account");
+        props.closeMenu();
+    };
+
+    const endSession = () => {
         logout();
         ToastsStore.success("Logout with success!");
         props.closeMenu();
         props.history.push("/");
-    }
+    };
 
     return (
         <Menu
@@ -26,7 +31,7 @@ export default function(props: IProps) {
             open={menu}
             onClose={props.closeMenu}
         >
-            <MenuItem onClick={props.closeMenu}>My account</MenuItem>
+            <MenuItem onClick={myAccount}>My account</MenuItem>
             <MenuItem onClick={endSession}>Logout</MenuItem>
         </Menu>
     );

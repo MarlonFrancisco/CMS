@@ -6,14 +6,18 @@ import { Loading } from "../../GlobalStyled";
 import { GridContainer } from "../../login/styled";
 import Contributions from "./contributions";
 import Porcentage from "./porcentage";
+import { useContext } from "react";
+import context from "./../context";
+import { IProjectActive } from "../../../typings/projectActive";
 
 export default function() {
     const [project, setProject] = useState({});
     const [loading, setLoading] = useState<boolean>(false);
+    const { projectActive } = useContext<{ projectActive: IProjectActive}>(context);
     const request = async () => {
         setLoading(true);
         try {
-            const res = await api.get(`/project/${process.env.PROJECTID}`);
+            const res = await api.get(`/project/${projectActive.id}`);
             setLoading(false);
             setProject(res.data);
             ToastsStore.success("Charts loaded with success");
@@ -36,11 +40,7 @@ export default function() {
         <Container>
             <GridContainer container>
                 <Contributions data={project}/>
-                <Grid item xs={12}>
-                    <Paper>
-                        <Porcentage data={project}/>
-                    </Paper>
-                </Grid>
+                <Porcentage data={project}/>
                 <Loading active={loading} />
             </GridContainer>
         </Container>

@@ -40,6 +40,7 @@ ReactDOM.render(
                 <PrivateRoute exact path="/app" component={App} />
                 <PrivateRoute exact path="/app/content" component={App} />
                 <PrivateRoute exact path="/app/chart" component={App} />
+                <PrivateRoute exact path="/app/account" component={App} />
                 <Route path="*" component={() => <h2>Not found</h2>} />
             </Switch>
         </BrowserRouter>

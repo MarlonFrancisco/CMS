@@ -4,9 +4,12 @@ import { ToastsStore } from "react-toasts";
 import api from "../../../../services/api";
 import Context from "./../context";
 import { ActionsGrid, UploadButton } from "./styled";
+import appContext from "./../../context";
+import { IProjectActive } from "../../../../typings/projectActive";
 
 export default function({ uploadImage, cancel }) {
     const { content, endLoading, initLoading, history } = useContext<any>(Context);
+    const { projectActive } = useContext<{projectActive: IProjectActive}>(appContext);
     const render = () => {
         if (uploadImage) {
             return (
@@ -23,7 +26,7 @@ export default function({ uploadImage, cancel }) {
         try {
             const body = {
                 publish: new Date(),
-                idProject: process.env.PROJECTID,
+                idProject: projectActive.id,
                 content,
             };
             await api.post("/content", body);

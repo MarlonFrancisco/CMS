@@ -1,15 +1,16 @@
 import {
-    Avatar,
     Grid,
     List,
     ListItem,
     ListItemAvatar,
+    ListItemIcon,
     ListItemText,
     ListSubheader,
     Paper,
 } from "@material-ui/core";
 import React from "react";
-import { IContents, IProject } from "../../../../models/home";
+import { IProject } from "../../../../typings/interfaces";
+import ContributionsList from "./ContributionsList";
 
 export default function({ user }) {
     let contributions = [];
@@ -22,19 +23,7 @@ export default function({ user }) {
 
     const render = () => {
         if (contributions.length) {
-            return contributions.reverse().map((content: IContents, index: number) => (
-                <ListItem button key={index}>
-                    <ListItemAvatar>
-                        <Avatar
-                            src={`${process.env.AVATARICON}${content.assignedTo.email}.png`}
-                        />
-                    </ListItemAvatar>
-                    <ListItemText
-                        primary={content.assignedTo.name}
-                        secondary={`Date contribution: ${new Date(content.publish).toLocaleString()}`}
-                    />
-                </ListItem>
-            ));
+            return <ContributionsList contributions={contributions}/>;
         } else {
             return (
                 <ListItem button>

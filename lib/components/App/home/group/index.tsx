@@ -9,20 +9,19 @@ import {
     Paper,
 } from "@material-ui/core";
 import React from "react";
-import { IMembers, IProject } from "../../../../models/home";
+import { IMember, IProject } from "../../../../typings/interfaces";
 
 export default function({ user }) {
     let group = [];
     if (user.member) {
-        user.member
-            .map((project: IProject) => {
-                group = [...project.members];
-            });
+        user.member.map((project: IProject) => {
+            group = [...project.members];
+        });
     }
 
     const render = () => {
         if (group.length) {
-            return group.map((member: IMembers) => (
+            return group.map((member: IMember) => (
                 <ListItem button key={member._id}>
                     <ListItemAvatar>
                         <Avatar

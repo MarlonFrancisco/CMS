@@ -1,18 +1,18 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
 import Chart from "react-apexcharts";
-import { IContents, IMembers } from "../../../../models/home";
+import { IContent, IMember } from "../../../../typings/interfaces";
 
 export default function({ data }) {
     const series = [];
 
     if (data.members) {
-        data.members.map((member: IMembers) => {
+        data.members.map((member: IMember) => {
             const labelsDate = [];
             const contentsUser = data.contents.filter(
-                (content: IContents) => content.assignedTo === member._id,
+                (content: IContent) => content.assignedTo === member._id,
             );
-            const filterDate = contentsUser.map((content: IContents) => {
+            const filterDate = contentsUser.map((content: IContent) => {
                 return new Date(content.publish).getMonth();
             });
             const countTest =
@@ -38,7 +38,7 @@ export default function({ data }) {
 
     return (
         <Grid item xs={12} md={6}>
-            <Chart type="line" series={series} options={options} />
+            <Chart type="line" series={series} height="300" options={options} />
         </Grid>
     );
 }

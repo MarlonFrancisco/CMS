@@ -9,21 +9,31 @@ import {
     Paper,
 } from "@material-ui/core";
 import React from "react";
-import { IProject } from "../../../../models/home";
+import { IProject } from "../../../../typings/interfaces";
+import { Active } from "./styled";
+import { useContext } from "react";
+import Context from "./../../context";
+import { IProjectActive } from "../../../../typings/projectActive";
 
-export default function({ user }) {
-    const projects = user.member ? [...user.member] : [];
+export default function({ projects }) {
+    const listProjects = projects ? [...projects] : [];
+    const { projectActive, setProjectActive } = useContext<{projectActive: IProjectActive, setProjectActive: any}>(Context);
+
+    const activeProject = (name: string, id: string) => (event: React.MouseEvent) => {
+        setProjectActive({name, id});
+    }
 
     const render = () => {
-        if (projects.length) {
-            return projects.map((project: IProject) => (
-                <ListItem button key={project._id}>
+        if (listProjects.length) {
+            return listProjects.map((project: IProject) => (
+                <ListItem button key={project._id} onClick={activeProject(project.name, project._id)}>
                     <ListItemAvatar>
                         <Avatar
                             src={`${process.env.AVATARICON}${project.name}.png`}
                         />
                     </ListItemAvatar>
                     <ListItemText primary={project.name} secondary="Project" />
+                    {projectActive.name === project.name && <Active />}
                 </ListItem>
             ));
         } else {

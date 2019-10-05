@@ -1,7 +1,7 @@
 import { Grid } from "@material-ui/core";
 import React, { useState } from "react";
 import Chart from "react-apexcharts";
-import { IMembers, IContents } from "../../../../models/home";
+import { IContent, IMember } from "../../../../typings/interfaces";
 
 export default function({ data }) {
     const options = {
@@ -20,15 +20,21 @@ export default function({ data }) {
     };
 
     if (data.members) {
-        data.members.map((member: IMembers) => {
-            const contents = data.contents.filter((content: IContents) => content.assignedTo === member._id);
+        data.members.map((member: IMember) => {
+            const contents = data.contents.filter(
+                (content: IContent) => content.assignedTo === member._id,
+            );
             options.labels.push(member.name);
             options.series.push(contents.length);
         });
     }
     return (
         <Grid item xs={12} md={6}>
-            <Chart options={options} series={options.series} type="donut" width="400"/>
+            <Chart
+                options={options}
+                series={options.series}
+                type="donut"
+            />
         </Grid>
     );
 }

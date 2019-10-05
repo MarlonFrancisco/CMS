@@ -1,20 +1,26 @@
 export interface IProject {
     _id: string;
     name: string;
-    contents: IContents[];
-    members: IMembers[];
+    contents: IContent[];
+    members: IMember[];
 }
 
-export interface IMembers {
+export interface IMember {
     _id: string;
     name: string;
     email: string;
     member: IProject[];
 }
 
-export interface IContents {
+export interface IContent {
     project: IProject;
     publish: Date;
     content: any;
     assignedTo: any;
+}
+
+export interface IChangeData {
+    name: string;
+    password: string;
+    email: string;
 }
