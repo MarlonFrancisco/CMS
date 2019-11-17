@@ -14,6 +14,7 @@ import { Active } from "./styled";
 import { useContext } from "react";
 import Context from "./../../context";
 import { IProjectActive } from "../../../../typings/projectActive";
+import { ListStyled } from "../styled";
 
 export default function({ projects }) {
     const listProjects = projects ? [...projects] : [];
@@ -47,12 +48,12 @@ export default function({ projects }) {
     return (
         <Grid item xs={12} md={4}>
             <Paper>
-                <List
+                <ListStyled
                     component="nav"
                     subheader={<ListSubheader>My Projects</ListSubheader>}
                 >
                     {render()}
-                </List>
+                </ListStyled>
             </Paper>
         </Grid>
     );

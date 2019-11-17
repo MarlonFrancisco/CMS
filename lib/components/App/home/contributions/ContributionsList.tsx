@@ -8,7 +8,7 @@ export default function({ contributions }) {
     const { openDrawer } = useContext(Context);
     const open = (fields: any) => (event: React.MouseEvent) => {
         openDrawer(fields);
-    }
+    };
 
     return (
         contributions.reverse().map((content: IContent, index: number) => (

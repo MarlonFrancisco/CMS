@@ -29,6 +29,8 @@ export default function({ uploadImage, cancel }) {
                 idProject: projectActive.id,
                 content,
             };
+
+            console.log(content);
             await api.post("/content", body);
 
             endLoading();

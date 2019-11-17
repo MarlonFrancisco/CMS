@@ -11,6 +11,7 @@ import {
 import React from "react";
 import { IProject } from "../../../../typings/interfaces";
 import ContributionsList from "./ContributionsList";
+import { ListStyled } from "./../styled";
 
 export default function({ user }) {
     let contributions = [];
@@ -35,12 +36,12 @@ export default function({ user }) {
     return (
         <Grid item xs={12} md={4}>
             <Paper>
-                <List
+                <ListStyled
                     component="nav"
                     subheader={<ListSubheader>Contributions</ListSubheader>}
                 >
                     {render()}
-                </List>
+                </ListStyled>
             </Paper>
         </Grid>
     );

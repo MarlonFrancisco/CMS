@@ -1,0 +1,10 @@
+{
+    "types": [
+        {
+            "type": "Text"
+        },
+        {
+            "type": "Html"
+        }
+    ]
+}

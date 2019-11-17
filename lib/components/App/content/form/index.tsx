@@ -8,7 +8,7 @@ interface IContent {
 }
 
 export default function({ contents }) {
-    const { content } = useContext<any>(Context);
+    let { content } = useContext<any>(Context);
     const handleChange = (fieldName: string) => (
         event: React.ChangeEvent<HTMLInputElement>,
     ) => {

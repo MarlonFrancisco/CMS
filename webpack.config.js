@@ -1,15 +1,10 @@
 const path = require('path');
 const webpack = require('webpack');
-const extractCss = require('mini-css-extract-plugin');
 const dotEnv = require('dotenv-webpack');
 
 module.exports = () => {
     const isProduction = process.env.NODE_ENV == 'production' ? true : false;
     const plugins = [];
-
-    plugins.push(new extractCss({
-        filename: "[name].css"
-    }));
 
     plugins.push(new dotEnv());
 
@@ -36,10 +31,6 @@ module.exports = () => {
                     test: /\.(ts|tsx)$/,
                     exclude: /node_modules/,
                     use: "ts-loader"
-                },
-                {
-                    test: /\.scss$/,
-                    use: [extractCss.loader, "css-loader", "sass-loader"]
                 }
             ]
         },

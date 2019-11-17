@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { ToastsStore } from "react-toasts";
 import api from "../../../services/api";
 import { Loading } from "../../GlobalStyled";
-import { GridContainer } from "../../login/styled";
 import Contributions from "./contributions";
 import Porcentage from "./porcentage";
 import { useContext } from "react";
@@ -38,11 +37,17 @@ export default function() {
     }, []);
     return (
         <Container>
-            <GridContainer container>
+            <Grid container>
                 <Contributions data={project}/>
+                <Contributions data={project}/>
+            </Grid>
+
+            <Grid container spacing={1}>
                 <Porcentage data={project}/>
-                <Loading active={loading} />
-            </GridContainer>
+                <Porcentage data={project}/>
+                <Porcentage data={project}/>
+            </Grid>
+            <Loading active={loading} />
         </Container>
     );
 }

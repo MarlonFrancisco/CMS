@@ -9,7 +9,7 @@ import {
     TextField,
 } from "@material-ui/core";
 import React, { useContext, useState } from "react";
-import configs from "../../../../content";
+import configs from "../../../../content.json";
 import Context from "./../context";
 
 interface IContent {

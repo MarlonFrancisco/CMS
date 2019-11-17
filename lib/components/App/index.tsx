@@ -20,8 +20,8 @@ const App = (props: RouteProps) => {
     const openDrawer = (fields: any) => {
         setBody(
             <List>
-                {Object.entries(fields).map((field) => (
-                    <ListItem>
+                {Object.entries(fields).map((field, index) => (
+                    <ListItem key={index}>
                         <ListItemText primary={field[0]} secondary={field[1]}/>
                     </ListItem>
                 ))}

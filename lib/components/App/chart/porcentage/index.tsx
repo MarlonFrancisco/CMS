@@ -1,4 +1,4 @@
-import { Grid } from "@material-ui/core";
+import { Grid, Paper } from "@material-ui/core";
 import React, { useState } from "react";
 import Chart from "react-apexcharts";
 import { IContent, IMember } from "../../../../typings/interfaces";
@@ -29,12 +29,14 @@ export default function({ data }) {
         });
     }
     return (
-        <Grid item xs={12} md={6}>
-            <Chart
-                options={options}
-                series={options.series}
-                type="donut"
-            />
+        <Grid item xs={12} md={4}>
+            <Paper>
+                <Chart
+                    options={options}
+                    series={options.series}
+                    type="donut"
+                />
+            </Paper>
         </Grid>
     );
 }

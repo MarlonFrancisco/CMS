@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import { IMember, IProject } from "../../../../typings/interfaces";
+import { ListStyled } from "../styled";
 
 export default function({ user }) {
     let group = [];
@@ -43,12 +44,12 @@ export default function({ user }) {
     return (
         <Grid item xs={12} md={4}>
             <Paper>
-                <List
+                <ListStyled
                     component="nav"
                     subheader={<ListSubheader>My Group</ListSubheader>}
                 >
                     {render()}
-                </List>
+                </ListStyled>
             </Paper>
         </Grid>
     );
