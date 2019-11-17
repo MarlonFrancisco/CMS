@@ -14,6 +14,12 @@ Tive a idéia da realização desse projeto, como uma necessidade no sistema que
 npm install
 ```
 
+## .Env
+
+O Projeto ultiliza alguns valores por meio do env
+
+![](./lib/assets/img/env.png)
+
 ## Meta
 
 Marlon Francisco – [@Marlon Francisco](https://www.linkedin.com/in/marlon-francisco-a8ab2215b/) – marlon.nascimento2@etec.sp.gov.br
@@ -22,7 +28,7 @@ Marlon Francisco – [@Marlon Francisco](https://www.linkedin.com/in/marlon-fran
 
 ## Contributing
 
-1. Faça o _fork_ do projeto (<https://github.com/yourname/yourproject/fork>)
+1. Faça o _fork_ do projeto (<https://github.com/MarlonFrancisco/CMS>)
 2. Crie uma _branch_ para sua modificação (`git checkout -b feature/fooBar`)
 3. Faça o _commit_ (`git commit -am 'Add some fooBar'`)
 4. _Push_ (`git push origin feature/fooBar`)
