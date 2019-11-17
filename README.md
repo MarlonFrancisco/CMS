@@ -16,9 +16,11 @@ npm install
 
 ## .Env
 
-O Projeto ultiliza alguns valores por meio do env
+> O Projeto ultiliza alguns valores por meio do env
 
 ![](./lib/assets/img/env.png)
+
+[Projeto da api no GitHub](https://github.com/MarlonFrancisco/Api-rest-mongo-Typescript-JWT)
 
 ## Meta
 
