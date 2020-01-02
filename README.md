@@ -1,7 +1,7 @@
 # CMS - Jestent
 > Sistema para gestão de conteudos
 
-Tive a idéia da realização desse projeto, como uma necessidade no sistema que eu estava desenvolvendo para o meu tcc. Basicamente o sistema o sistema apelidado de "Jestent" kk, vai separar o conteudo criado seja para um site de notícias ou qualquer aplicação que necessite da criação de conteudos não esticos e dinâmicos para o seu sistema, todas os dados criados dentro do jestent vai ser armazenado em uma api que você poderá fazer a requisição tranquilamente a esses mesmos dados mais tarde na sua aplicação principal. Apenas outro ponto o jestent funciona por meio de projetos podendo, criar quantos projetos a sua necessidade.
+Gestão de conteudos
 
 ![](./lib/assets/img/login.png)
 ![](./lib/assets/img/home.png)
